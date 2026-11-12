@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">حارس البطارية الذكي</string>
+    <string name="channel_alerts">تنبيهات البطارية</string>
+    <string name="channel_analysis">التحليل والتوصيات</string>
+    <string name="notif_title">حارس البطارية الذكي</string>
+</resources>

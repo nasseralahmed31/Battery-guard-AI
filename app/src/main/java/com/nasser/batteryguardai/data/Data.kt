@@ -130,10 +130,28 @@ abstract class AppDb : RoomDatabase() {
 
 class Prefs(ctx: Context) {
     private val sp = ctx.getSharedPreferences("bg_prefs", Context.MODE_PRIVATE)
-    var theme: Int get() = sp.getInt("theme", 0) set(v) { sp.edit().putInt("theme", v).apply() } // 0 نظام،1 داكن،2 فاتح
-    var lowPower: Boolean get() = sp.getBoolean("low", false) set(v) { sp.edit().putBoolean("low", v).apply() }
-    var notifAlerts: Boolean get() = sp.getBoolean("n_alerts", true) set(v) { sp.edit().putBoolean("n_alerts", v).apply() }
-    var notifAnalysis: Boolean get() = sp.getBoolean("n_analysis", true) set(v) { sp.edit().putBoolean("n_analysis", v).apply() }
-    var mode: Int get() = sp.getInt("mode", 3) set(v) { sp.edit().putInt("mode", v).apply() }
-    var customInterval: Int get() = sp.getInt("c_int", 15) set(v) { sp.edit().putInt("c_int", v).apply() }
+
+    var theme: Int
+        get() = sp.getInt("theme", 0)
+        set(v) { sp.edit().putInt("theme", v).apply() }
+
+    var lowPower: Boolean
+        get() = sp.getBoolean("low", false)
+        set(v) { sp.edit().putBoolean("low", v).apply() }
+
+    var notifAlerts: Boolean
+        get() = sp.getBoolean("n_alerts", true)
+        set(v) { sp.edit().putBoolean("n_alerts", v).apply() }
+
+    var notifAnalysis: Boolean
+        get() = sp.getBoolean("n_analysis", true)
+        set(v) { sp.edit().putBoolean("n_analysis", v).apply() }
+
+    var mode: Int
+        get() = sp.getInt("mode", 3)
+        set(v) { sp.edit().putInt("mode", v).apply() }
+
+    var customInterval: Int
+        get() = sp.getInt("c_int", 15)
+        set(v) { sp.edit().putInt("c_int", v).apply() }
 }

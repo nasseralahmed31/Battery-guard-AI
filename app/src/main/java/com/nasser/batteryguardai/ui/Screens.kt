@@ -348,12 +348,12 @@ private val modeInfo = listOf(
     SubPage("أوضاع توفير الطاقة", back) {
         modeInfo.forEachIndexed { i, (n, d) ->
             Panel {
-                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.clickable { vm.setMode(i) }) {
-                    RadioButton(vm.mode == i, { vm.setMode(i) }); Text(n, fontWeight = FontWeight.Bold)
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.clickable { vm.updateMode(i) }) {
+                    RadioButton(vm.mode == i, { vm.updateMode(i) }); Text(n, fontWeight = FontWeight.Bold)
                 }
                 Text(d, fontSize = 13.sp)
                 if (i == 4 && vm.mode == 4) Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    listOf(15, 30, 60).forEach { v -> FilterChip(vm.customInterval == v, { vm.setCustomInterval(v) }, { Text("$v د") }) }
+                    listOf(15, 30, 60).forEach { v -> FilterChip(vm.customInterval == v, { vm.updateCustomInterval(v) }, { Text("$v د") }) }
                 }
             }
         }

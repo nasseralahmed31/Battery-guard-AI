@@ -60,8 +60,8 @@ class VM(private val app: Application) : AndroidViewModel(app) {
     fun setLow(v: Boolean) { lowPower = v; prefs.lowPower = v; Scheduler.schedule(app) }
     fun setAlerts(v: Boolean) { notifAlerts = v; prefs.notifAlerts = v }
     fun setAnalysis(v: Boolean) { notifAnalysis = v; prefs.notifAnalysis = v }
-    fun setMode(v: Int) { mode = v; prefs.mode = v; Scheduler.schedule(app) }
-    fun setCustomInterval(v: Int) { customInterval = v; prefs.customInterval = v; Scheduler.schedule(app) }
+    fun updateMode(v: Int) { mode = v; prefs.mode = v; Scheduler.schedule(app) }
+    fun updateCustomInterval(v: Int) { customInterval = v; prefs.customInterval = v; Scheduler.schedule(app) }
     fun analyzeNow() = Scheduler.runNow(app)
 
     fun addRule(name: String, trigger: String, th: Int, from: Int, to: Int) = viewModelScope.launch(Dispatchers.IO) {
